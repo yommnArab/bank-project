@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class employee : public Person{
+private :
+    double salary;
+public:
+    employee(int id, string password, string name, double salary)
+    :Person(id , name, password), salary (salary){}
+
+     void setSalary(double newSalary) {
+        if (newSalary >= 5000) {
+            salary = newSalary;
+        } else {
+        cout<<("Salary must be at least 5000.");
+        }
+     }
+   double getSalary()  {
+        return salary;
+    }
+    void display()  {
+        cout << "Employee Details:\n"
+                  << "ID: " << id << "\n"
+                  << "Name: " << name << "\n"
+                  << "Salary: " << salary << endl;
+    }
+};
+
